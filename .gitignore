@@ -1,6 +1,8 @@
 env/
 .pyc
 [a-w][a-z]
+.swp
+.swo
 [._]s[a-w][a-z]
 *.un~
 Session.vim
