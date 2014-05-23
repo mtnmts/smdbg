@@ -2,16 +2,17 @@
 # File    : http_server.py
 # Purpose : HTTP Server serving the web application
 
+import subprocess
+import tornado.web
+import tornado.httpserver
+import os
+     
 class HTTPServer(object):
-    import subprocess
-    from tornado.web import StaticFileHandler
     
-    SERVE_PATH = "web" + os.sep
-
     def __init__(self, port, serve_path):
         self._port = port
         self._running = False
-
+        self._serve_path = serve_path
     @property
     def port(self):
         return self._port
@@ -21,8 +22,12 @@ class HTTPServer(object):
         """ Starts the HTTP Server if it wasn't running,
             calling this function if the server is already
             running will do nothing """
-        settings = {'static_path' : SERVE_PATH}
-        handlers = [(r'/(.*)', StaticFileHandler, {'path' : SERVE_PATH})]      
+        settings = {'static_path' : self._serve_path}
+        handlers = [(r'/(.*)', tornado.web.StaticFileHandler, {'path' : self._serve_path})]      
+        app = tornado.web.Application(handlers, **settings)
+        server = tornado.httpserver.HTTPServer(app) 
+        server.listen(self._port)
+        
     @property
     def running():
         return self._running
