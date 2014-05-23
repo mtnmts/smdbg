@@ -3,6 +3,7 @@
 
 
 * Websockets Server instance for server-side interaction with the client side on port 8888
+    - need to consider layout for communication and encapsulation
 * Create basic angular.js one-page application
 * Connect web-socket from server to client to test websockets
 * Begin work with WinAppDbg
