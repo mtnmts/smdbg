@@ -1,0 +1,36 @@
+SMDBG Websockets communication definition
+==========================================
+
+Stages
+=======
+
+1. Initialization
+2. Workflow
+3. Shutdown
+
+Initialization
+===============
+
+1. Client connects to the websocket server on the local interface.
+2. Client waits for server to send 'ready' message indicating server is ready to begin.
+3. Server sends 'ready' message
+
+
+Workflow
+=========
+
+Exchange of Messages, requests for actions by the user and data updates by the server (can be push by server or pulled by client on demand)
+
+
+Shutdown
+=========
+
+Enable either a shutdown or reset
+
+
+Message Definition
+===================
+
+JSON Encoded messages
+
+
