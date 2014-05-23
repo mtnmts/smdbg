@@ -3,7 +3,9 @@
 
 
 * Tornado HTTP Server instance serving the client side (Web) on port 80
+    - Working on this now in http_server.py
 * Websockets Server instance for server-side interaction with the client side on port 8888
 * Begin work with WinAppDbg
+    - Added to pip-requirements
 * Define debugger structure
 * Define messaging protocol
