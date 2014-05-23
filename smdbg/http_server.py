@@ -4,7 +4,7 @@
 
 class HTTPServer(object):
     import subprocess
-    from tornado.web import WebHandler, StaticFileHandler
+    from tornado.web import StaticFileHandler
     
     SERVE_PATH = "web" + os.sep
 
@@ -22,8 +22,7 @@ class HTTPServer(object):
             calling this function if the server is already
             running will do nothing """
         settings = {'static_path' : SERVE_PATH}
-        handlers = [(r'/', WebHandler),
-                    (r'/(.*)', StaticFileHandler, {'path' : SERVE_PATH})]      
+        handlers = [(r'/(.*)', StaticFileHandler, {'path' : SERVE_PATH})]      
     @property
     def running():
         return self._running
