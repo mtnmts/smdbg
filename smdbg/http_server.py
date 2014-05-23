@@ -23,7 +23,7 @@ class HTTPServer(object):
             running will do nothing """
         settings = {'static_path' : SERVE_PATH}
         handlers = [(r'/', WebHandler),
-                    (r'/*', StaticFileHandler, {'path' : SERVE_PATH})]      
+                    (r'/(.*)', StaticFileHandler, {'path' : SERVE_PATH})]      
     @property
     def running():
         return self._running
