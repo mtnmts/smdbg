@@ -9,6 +9,7 @@ class WebSocketHandler(websocket.WebSocketHandler):
         print 'Websocket opened'
 
     def on_message(self, message):
+        print "Message recieved of length: {}".format(str(len(message)))
         self.write_message(u'Recieved:' + message)
         
     def on_close(self):
