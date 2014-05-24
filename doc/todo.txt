@@ -1,7 +1,8 @@
  TODO
 ======
 
-
+* Refactor HTTP Server since it isn't contained so well.
+  the websocket server is of type handler, while the HTTP Server owns the application, decouple the application object from the HTTP Server
 * Websockets Server instance for server-side interaction with the client side on port 8888
     - need to consider layout for communication and encapsulation
     - Websocket server does not need to be on a different port, add WS hander to URL /ws

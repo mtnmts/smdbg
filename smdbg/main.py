@@ -7,7 +7,7 @@ import tornado.ioloop
 import os
 
 def startHTTPServer():
-   serv = HTTPServer(8080, 'web' + os.sep) 
+   serv = HTTPServer('web' + os.sep) 
    serv.start()
 
 def main():
