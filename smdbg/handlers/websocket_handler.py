@@ -1,10 +1,10 @@
 # Author  : Matan M. Mates
-# File    : websocket_server.py
-# Purpose : Websocket Server for communication with the web application
+# File    : websocket_handler.py
+# Purpose : Websocket handler for communication with the web application
 
 from tornado import websocket
 
-class WebSocketServer(websocket.WebSocketHandler):
+class WebSocketHandler(websocket.WebSocketHandler):
     def open(self):
         print 'Websocket opened'
 
