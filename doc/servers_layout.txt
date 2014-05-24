@@ -1,0 +1,19 @@
+
+Servers port - 80
+HTTP Server Handler (Static file server) - /web/(.*) - Mapped to /web directory
+Websocket Server Handler - /ws
+
+
+Classes
+=========
+
+SMDBGWebSocketHandler
+----------------------
+* Waits for application connection on /ws
+* Maintains callbacks for notifying on message recieves
+ <- Think about this, perhaps i can think of a better way to do this instead of callbacks
+
+SMDBGStaticFileHandler
+-----------------------
+
+* Serves /web directory

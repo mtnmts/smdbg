@@ -1,5 +1,6 @@
 env/
 .pyc
+*.pyc
 [a-w][a-z]
 *.swp
 *.swo
@@ -10,3 +11,4 @@ env/
 Session.vim
 .netrwhist
 *~
+tags
