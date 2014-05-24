@@ -9,4 +9,6 @@ import os
 
 
 class WebStaticHandler(tornado.web.StaticFileHandler):
-    pass
+    def parse_url_path(self, url_path):
+        if not url_path or url_path == '/':
+            url_path += 'main.html'
