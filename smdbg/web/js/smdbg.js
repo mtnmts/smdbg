@@ -1,3 +1,5 @@
+var smdbgApp = angular.module('smdbgApp', []);
+
 var connection = new WebSocket('ws://127.0.0.1:8080/ws');
 
 // When the connection is open, send some data to the server
